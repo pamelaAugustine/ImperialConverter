@@ -1,0 +1,37 @@
+html
+  head
+    title Imperial Converter
+    meta(name='description', content='A cool thing made with Glitch')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/public/style.css')
+body
+    h1.border.center #{title}
+    p Please fill in the form below to convert the following:
+    ul
+        li gallons (gal) to litres (L)
+        li litres (L) to gallons (gal)
+        br
+        li miles (mi) to kilometers (km)
+        li kilometers (km) to miles (mi)
+        br
+        li pounds (lbs) to kilograms (kg)
+        li kilograms (kg) to pounds (lbs)
+    br
+    p To convert the units, you can enter the number, whether it be a whole number, decimal, or fraction. Then please use the abbreviated unit. Ex. gallons = gal, liters = L, miles = mi, kilometers = km, pounds = lbs, and kilograms = kg This form is not case sensitive. Please enter the number followed directly by the unit.
+
+    form(action='/api/convert', method='get')
+        div
+            label Enter Number of Units and Abbreviated Units Below:
+            br
+            br
+            input(type='text', name='units')
+        br
+        div 
+            input(type='submit', value='Submit')
+
+    if showResult
+        hr
+        p#logic #{logic} 
+        
